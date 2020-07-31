@@ -11,7 +11,7 @@ import tensorflow
 from scipy import spatial
 
 os.chdir("/Users/cj/popvae/")
-infile="data/1kg/YRI_CEU_CHB.chr22.highcoverageCCDG.vcf.gz" #phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes
+infile="data/1kg/phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes" #phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes
 #infile="data/1kg/YRI_CEU_CHB.chr10.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz"
 #infile="data/1kg/YRI_CEU_CHB.chr22.highcoverageCCDG.vcf.gz" #even more SNPs in the high coverage resequencing data, both before and after masking
 sample_data="data/1kg/sample_metadata.txt"
@@ -302,19 +302,6 @@ ax3.set_xlabel("PC1")
 ax3.set_ylabel("PC2")
 fig.tight_layout()
 #fig.savefig('fig/PCA_decoder_comp_mpl.pdf',bbox_inches='tight')
-
-###################### pi ####################### (need to fix this to account for masking)
-# pi=allel.sequence_diversity(pos,ac_all)
-# pi2=allel.sequence_diversity(sim_pos,sim_ac_all)
-# gen_ac_all=np.apply_along_axis(sum,0,bingen)
-# gen_ac_all=np.array(gen_ac_all,dtype="i")
-# tmp=np.array([300-x for x in gen_ac_all],dtype="i")
-# gen_ac_all=allel.AlleleCountsArray(np.transpose(np.vstack((tmp,gen_ac_all))))
-# pi3=allel.sequence_diversity(pos,gen_ac_all)
-#
-# print("real pi:"+str(pi))
-# print("simulated pi:"+str(pi2))
-# print("VAE decoder pi:"+str(pi3))
 
 ########################### site frequency spectrum #############################
 realYRI=dc*2
